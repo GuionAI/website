@@ -133,6 +133,15 @@ The website includes a blog with the following features:
 - Tags, featured posts, and reading time
 - Author profiles with avatars
 
+#### React Router v7 File-Based Routing Structure
+
+The blog uses React Router v7's file-based routing with dot notation:
+- `blog.tsx` - Parent layout route that renders `<Outlet />`
+- `blog._index.tsx` - Blog listing page rendered at `/blog`
+- `blog.$slug.tsx` - Dynamic blog post pages rendered at `/blog/:slug`
+
+**Important**: The parent route (`blog.tsx`) MUST render `<Outlet />` for child routes to display. Without this, child routes will not be visible.
+
 ### SEO Optimization
 
 Comprehensive SEO implementation using:
@@ -167,4 +176,37 @@ import { SEO } from "~/components/seo";
 - Sven: sven@guion.io
 - Neil: neil@guion.io
 - GitHub: https://github.com/GuionAI
+
+## Common Issues and Solutions
+
+### Hydration Errors
+
+1. **Nested `<a>` tags**: When using navigation components like `NavigationMenuLink` with React Router's `Link`, use the `asChild` prop to prevent nested anchor tags:
+   ```tsx
+   <NavigationMenuLink asChild>
+     <Link to="/path">Text</Link>
+   </NavigationMenuLink>
+   ```
+
+2. **Date formatting mismatches**: Use UTC dates to prevent timezone differences between server and client:
+   ```tsx
+   // In formatDate function
+   const utcDate = new Date(Date.UTC(year, month - 1, day));
+   return utcDate.toLocaleDateString("en-US", { timeZone: "UTC", ... });
+   ```
+
+### Routing Issues
+
+1. **File-based routing structure**: 
+   - Use automatic routing with `@react-router/fs-routes` in `routes.ts`
+   - Follow dot notation for nested routes (e.g., `blog.tsx`, `blog._index.tsx`, `blog.$slug.tsx`)
+   - Parent routes must render `<Outlet />` for child routes to work
+
+2. **Dynamic route parameters**:
+   - Use `$` prefix for dynamic segments (e.g., `blog.$slug.tsx`)
+   - Access params via `useLoaderData()` hook, not component props
+
+3. **Special characters in routes**:
+   - Use brackets for dots in filenames: `robots[.]txt.ts` → `/robots.txt`
+   - Use brackets for other special characters as needed
 
