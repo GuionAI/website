@@ -4,17 +4,17 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Badge } from "~/components/ui/badge";
 import { ArrowRight, Mic, Brain, Sparkles, Users } from "lucide-react";
-
-export function meta({ }: Route.MetaArgs) {
-  return [
-    { title: "Guion - AI for Indies, Founders & Professionals" },
-    { name: "description", content: "Exploring AI possibilities to help indies, founders, and professionals. Discover our innovative products like FlickNote." },
-  ];
-}
+import { SEO } from "~/components/seo";
 
 export default function Home() {
   return (
     <>
+      <SEO 
+        title="Guion - AI for Indies, Founders & Professionals"
+        description="Exploring AI possibilities to help indies, founders, and professionals. Discover our innovative products like FlickNote - audio-first note taking powered by AI."
+        url="/"
+        keywords={["AI tools", "indie makers", "founders", "professionals", "FlickNote", "audio transcription", "note taking", "productivity"]}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-background py-20 sm:py-32">
         <div className="container relative z-10">

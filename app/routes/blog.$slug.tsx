@@ -7,6 +7,7 @@ import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
 import { formatDate } from "~/lib/blog-types";
 import { blogPosts } from "~/data/blog-posts";
 import { marked } from "marked";
+import { SEO } from "~/components/seo";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const post = blogPosts.find(p => p.slug === params.slug);
@@ -21,21 +22,6 @@ export async function loader({ params }: Route.LoaderArgs) {
   return { post, htmlContent };
 }
 
-export function meta({ data }: Route.MetaArgs) {
-  if (!data) return [];
-  const { post } = data;
-  
-  return [
-    { title: `${post.title} - Guion Blog` },
-    { name: "description", content: post.description },
-    { property: "og:title", content: post.title },
-    { property: "og:description", content: post.description },
-    { property: "og:type", content: "article" },
-    { property: "article:author", content: post.author },
-    { property: "article:published_time", content: post.date },
-    ...(post.image ? [{ property: "og:image", content: post.image }] : []),
-  ];
-}
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { post, htmlContent } = loaderData;
@@ -54,8 +40,47 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
     }
   };
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: post.image ? `https://guion.io${post.image}` : "https://guion.io/guion-og.png",
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      email: post.author === "Sven" ? "sven@guion.io" : "neil@guion.io",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Guion",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://guion.io/guion-logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://guion.io/blog/${post.slug}`,
+    },
+  };
+
   return (
-    <article className="container py-16">
+    <>
+      <SEO
+        title={`${post.title} - Guion Blog`}
+        description={post.description}
+        url={`/blog/${post.slug}`}
+        type="article"
+        author={post.author}
+        publishedTime={post.date}
+        image={post.image}
+        keywords={post.tags}
+        structuredData={blogPostingSchema}
+      />
+      <article className="container py-16">
       <div className="mx-auto max-w-3xl">
         {/* Navigation */}
         <Button asChild variant="ghost" size="sm" className="mb-8">
@@ -160,5 +185,6 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         </div>
       </div>
     </article>
+    </>
   );
 }
