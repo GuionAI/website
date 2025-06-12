@@ -19,7 +19,7 @@ At Guion, we believe in transparency and community. As a two-person startup expl
 
 - **Our development journey** - The challenges, breakthroughs, and lessons learned
 - **AI insights** - How we're using AI to augment human capabilities
-- **Product updates** - Behind-the-scenes looks at Flick Note and future products
+- **Product updates** - Behind-the-scenes looks at FlickNote and future products
 - **Industry thoughts** - Our perspective on the evolving landscape of AI tools
 
 ## What to Expect
@@ -59,25 +59,25 @@ We believe the best products are built with community feedback. We encourage you
 
 This blog is just the beginning. We're committed to sharing our journey openly and honestly. Whether you're a fellow founder, a developer exploring AI, or someone interested in how technology can enhance human capabilities, we hope you'll find value in our posts.
 
-Stay tuned for our next post where we'll dive deep into the development of Flick Note and how we're using AI to revolutionize note-taking.
+Stay tuned for our next post where we'll dive deep into the development of FlickNote and how we're using AI to revolutionize note-taking.
 
 Welcome aboard! 🚀
     `
   },
   {
     slug: "building-flick-note",
-    title: "Building Flick Note: The Journey to Audio-First Note Taking",
-    description: "A deep dive into how we built Flick Note, our audio transcription app that helps users capture and organize thoughts effortlessly.",
+    title: "Building FlickNote: The Journey to Audio-First Note Taking",
+    description: "A deep dive into how we built FlickNote, our audio transcription app that helps users capture and organize thoughts effortlessly.",
     date: "2025-06-10",
     author: "Sven",
-    tags: ["Product", "Design", "Flick Note", "AI"],
+    tags: ["Product", "Design", "FlickNote", "AI"],
     image: "/blog/flick-note-hero.jpg",
     featured: false,
     readingTime: "5 min read",
     content: `
-# Building Flick Note: The Journey to Audio-First Note Taking
+# Building FlickNote: The Journey to Audio-First Note Taking
 
-When we set out to build Flick Note, we had a simple observation: typing on mobile devices is slow and cumbersome, especially when you're trying to capture a fleeting thought or idea. What if there was a better way?
+When we set out to build FlickNote, we had a simple observation: typing on mobile devices is slow and cumbersome, especially when you're trying to capture a fleeting thought or idea. What if there was a better way?
 
 ## The Problem We Wanted to Solve
 
@@ -118,13 +118,13 @@ We needed transcription that was:
 - Smart enough to understand context
 
 ### Privacy-First Architecture
-Your thoughts are private. We built Flick Note with:
+Your thoughts are private. We built FlickNote with:
 - On-device processing where possible
 - End-to-end encryption for cloud features
 - No selling or analyzing of user data
 
 ### Cross-Platform Sync
-Ideas don't wait for you to be at your desk. Flick Note syncs seamlessly across:
+Ideas don't wait for you to be at your desk. FlickNote syncs seamlessly across:
 - iOS (native Swift app)
 - Web (PWA for desktop)
 - Android (coming soon)
@@ -146,9 +146,9 @@ We're just getting started. Upcoming features include:
 
 ## Try It Yourself
 
-Flick Note is now available in beta. We'd love for you to try it and share your feedback. Visit our [Projects page](/projects#flick-note) to learn more.
+FlickNote is now available in beta. We'd love for you to try it and share your feedback. Visit our [Projects page](/projects#flick-note) to learn more.
 
-Building Flick Note has been an incredible journey, and we're excited to see how it helps people capture and organize their thoughts in new ways. Stay tuned for more updates as we continue to evolve the product based on your feedback.
+Building FlickNote has been an incredible journey, and we're excited to see how it helps people capture and organize their thoughts in new ways. Stay tuned for more updates as we continue to evolve the product based on your feedback.
     `
   },
   {
@@ -179,7 +179,7 @@ Consider these scenarios:
 At Guion, we design our products around three core principles:
 
 ### 1. Humans Set Direction, AI Handles Execution
-In Flick Note, you speak your ideas naturally. AI handles the tedious parts - transcription, formatting, organization - but your thoughts remain unchanged. The AI serves you, not the other way around.
+In FlickNote, you speak your ideas naturally. AI handles the tedious parts - transcription, formatting, organization - but your thoughts remain unchanged. The AI serves you, not the other way around.
 
 ### 2. Preserve Human Agency
 Every AI suggestion in our products is just that - a suggestion. You maintain full control over:
@@ -320,7 +320,7 @@ Surprisingly crucial for productivity:
 
 ## Note-Taking & Knowledge Management
 
-### Flick Note (Our Product!)
+### FlickNote (Our Product!)
 We dogfood our own product for:
 - Meeting notes
 - Quick ideas
@@ -400,7 +400,7 @@ No tool will make you productive if you:
 **Afternoon**:
 4. Loom updates for async review
 5. Collaborative work
-6. End-of-day notes in Flick Note
+6. End-of-day notes in FlickNote
 
 **Weekly**:
 - Tool audit (15 min)
