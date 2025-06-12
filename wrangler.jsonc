@@ -7,6 +7,7 @@
   "name": "guion-official",
   "compatibility_date": "2025-01-11",
   "main": "./workers/app.ts",
+  "account_id": "4a7d2cc3b61181986870b57848eff910",
   "vars": {
     "SITE_NAME": "Guion"
   },
