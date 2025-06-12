@@ -70,3 +70,18 @@ This is a React Router v7 application with server-side rendering (SSR) enabled.
 - shadcn/ui components should be added using the components.json configuration
 - CSS variables are enabled for theming support
 
+## Deployment
+
+### Cloudflare Pages
+
+This project is configured for static deployment on Cloudflare Pages:
+
+1. SSR is disabled in `react-router.config.ts` for SPA mode
+2. Build output is in `build/client/` directory
+
+To deploy:
+```bash
+bun run build
+# Upload build/client/ directory to Cloudflare Pages
+```
+
