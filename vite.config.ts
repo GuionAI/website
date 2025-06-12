@@ -6,7 +6,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import sitemap from "vite-plugin-sitemap";
 
 export default defineConfig({
   plugins: [
@@ -18,22 +17,5 @@ export default defineConfig({
     tailwindcss(),
     reactRouter(),
     tsconfigPaths(),
-    sitemap({
-      hostname: "https://guion.io",
-      exclude: ["/404"],
-      // Dynamic routes for blog posts
-      dynamicRoutes: [
-        "/",
-        "/about",
-        "/projects",
-        "/vision", 
-        "/contact",
-        "/blog",
-        // Blog posts would be added dynamically in production
-        "/blog/introducing-flick-note",
-        "/blog/ai-for-personal-productivity",
-        "/blog/building-tools-for-indies",
-      ],
-    }),
   ],
 });
