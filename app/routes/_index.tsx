@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/_index";
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";

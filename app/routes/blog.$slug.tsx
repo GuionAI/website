@@ -1,5 +1,5 @@
 import type { Route } from "./+types/blog.$slug";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { Badge } from "~/components/ui/badge";
 import { Separator } from "~/components/ui/separator";
 import { Button } from "~/components/ui/button";
@@ -23,8 +23,8 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 
-export default function BlogPost({ loaderData }: Route.ComponentProps) {
-  const { post, htmlContent } = loaderData;
+export default function BlogPost() {
+  const { post, htmlContent } = useLoaderData<typeof loader>();
 
   const handleShare = async () => {
     if (navigator.share) {

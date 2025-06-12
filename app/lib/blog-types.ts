@@ -24,7 +24,12 @@ export interface BlogMeta {
 }
 
 export function formatDate(date: string): string {
-  return new Date(date).toLocaleDateString("en-US", {
+  // Parse the date in UTC to avoid timezone issues
+  const [year, month, day] = date.split('-').map(Number);
+  const utcDate = new Date(Date.UTC(year, month - 1, day));
+  
+  return utcDate.toLocaleDateString("en-US", {
+    timeZone: "UTC",
     year: "numeric",
     month: "long",
     day: "numeric",
