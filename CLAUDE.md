@@ -72,16 +72,30 @@ This is a React Router v7 application with server-side rendering (SSR) enabled.
 
 ## Deployment
 
-### Cloudflare Pages
+### Cloudflare Workers (SSR)
 
-This project is configured for static deployment on Cloudflare Pages:
+This project is configured for SSR deployment on Cloudflare Workers:
 
-1. SSR is disabled in `react-router.config.ts` for SPA mode
-2. Build output is in `build/client/` directory
+1. SSR is enabled in `react-router.config.ts`
+2. Uses `@react-router/cloudflare` adapter
+3. Entry point is `server.ts`
+4. Configuration in `wrangler.toml`
 
 To deploy:
 ```bash
+# Local deployment
+./deploy.sh
+
+# Or manually
 bun run build
-# Upload build/client/ directory to Cloudflare Pages
+wrangler deploy
 ```
+
+See `CLOUDFLARE_DEPLOYMENT.md` for detailed deployment instructions.
+
+### GitHub Actions
+
+Automatic deployment on push to main:
+- `.github/workflows/deploy-workers.yml` - Deploy to Cloudflare Workers
+- Requires `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets
 

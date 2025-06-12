@@ -6,4 +6,6 @@ export default [
   route("projects", "routes/projects.tsx"),
   route("vision", "routes/vision.tsx"),
   route("contact", "routes/contact.tsx"),
+  route("blog", "routes/blog.tsx"),
+  route("blog/:slug", "routes/blog.$slug.tsx"),
 ] satisfies RouteConfig;
