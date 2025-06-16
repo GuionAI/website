@@ -16,6 +16,14 @@ const requestHandler = createRequestHandler(
 
 export default {
   async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+    
+    // Redirect www.guion.io to guion.io
+    if (url.hostname === 'www.guion.io') {
+      url.hostname = 'guion.io';
+      return Response.redirect(url.toString(), 301);
+    }
+    
     return requestHandler(request, {
       cloudflare: { env, ctx },
     });

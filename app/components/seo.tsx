@@ -39,7 +39,7 @@ export function SEO({
     "@type": "Organization",
     name: "Guion",
     url: BASE_URL,
-    logo: `${BASE_URL}/guion-logo.svg`,
+    logo: `${BASE_URL}/guion-logo-light.png`,
     description: "Exploring AI possibilities to help indies, founders, and professionals",
     foundingDate: "2024",
     founders: [
