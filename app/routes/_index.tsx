@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="Guion - AI for Indies, Founders & Professionals"
+        title="AI for Indies, Founders & Professionals"
         description="Exploring AI possibilities to help indies, founders, and professionals. Discover our innovative products like FlickNote - audio-first note taking powered by AI."
         url="/"
         keywords={["AI tools", "indie makers", "founders", "professionals", "FlickNote", "audio transcription", "note taking", "productivity"]}
